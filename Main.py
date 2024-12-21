@@ -3,7 +3,7 @@ from sys import exit
 
 pygame.init()
 screen = pygame.display.set_mode((800, 400))
-pygame.display.set_caption('runner')
+pygame.display.set_caption('Aswang')
 clock = pygame.time.Clock()
 
 while True:
