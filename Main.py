@@ -1,16 +1,21 @@
 import pygame
-from sys import exit
+from config import *
+from sprites import *
+import sys
 
-pygame.init()
-screen = pygame.display.set_mode((800, 400))
-pygame.display.set_caption('Aswang')
-clock = pygame.time.Clock()
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+        self.clock = pygame.time.Clock()
+        self.font = pygame.font.Font('League Spartan', 32)
+        self.running = True
 
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
+    def new(self):
+        self.playing = True
 
-pygame.display.update()
-clock.tick(60)
+        self.all_sprites = pygame.sprite.LayeredUpdates()
+        self.blocks = pygame.sprite.LayeredUpdates()
+        self.mob1 = pygame.sprite.LayeredUpdates()
+
+        self.player = Player()
