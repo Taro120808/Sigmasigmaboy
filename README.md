@@ -1,1 +1,1 @@
-sigma sigma boy sigma boy sigma boy Каждая девчонка хочет танцевать с тобой sigma sigma boy sigma boy sigma boy. ああ、恐怖の匂いが大好きです!
+ONLY post game files, sprite files, code files, etc. DO NOT delete any files uploaded in this repository NOR change anything inside the files.
