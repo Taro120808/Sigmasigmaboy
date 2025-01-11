@@ -19,3 +19,11 @@ class Game:
                 self.mob1 = pygame.sprite.LayeredUpdates()
 
                 self.player = Player(self, 1, 2)
+
+        def update(self):
+
+        def draw(self):
+
+        def main(self):
+
+        def game_over(self):
