@@ -24,4 +24,4 @@ class Player(pygame.sprite.Sprite):
                 self.rect.y = self.y
         
         def update(self):
-                pass #just a boolean
+                pass 
