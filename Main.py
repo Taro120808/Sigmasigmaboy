@@ -21,9 +21,29 @@ class Game:
                 self.player = Player(self, 1, 2)
 
         def update(self):
+                self.all_sprites.update()
 
         def draw(self):
+                self.screen.fill(BLACK)
+                self.all_sprites.draw(self.screen)
+                self.clock.tick(FPS)
+                pygame.display.update()
 
         def main(self):
+                while self.playing:
+                        self.events()
+                        self.update()
+                        self.draw()
+                self.running = False
 
         def game_over(self):
+
+g = Game()
+g.intro_screen()
+g.new()
+while g.running:
+        g.main()
+        g.game_over()
+
+pygame.quit()
+sys.exit()
