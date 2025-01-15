@@ -24,4 +24,20 @@ class Player(pygame.sprite.Sprite):
                 self.rect.y = self.y
         
         def update(self):
-                pass 
+                def movement(self):
+                        key = pygame.key.get_pressed()
+                        if [pygame.K_a]:
+                                self.x_change -= Player_Speed
+                                self.facing = 'left'
+                                
+                        if [pygame.K_d]:
+                                self.x_change += Player_Speed
+                                self.facing = 'right'
+
+                        if [pygame.K_w]:
+                                self.y_change -= Player_Speed
+                                self.facing = 'up'
+
+                        if [pygame.K_s]:
+                                self.y_change += Player_Speed
+                                self.facing = 'down'
