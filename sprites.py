@@ -16,28 +16,38 @@ class Player(pygame.sprite.Sprite):
                 self.HEIGHT = TILESIZE
                 self.WIDTH = TILESIZE
 
+                self.x_change = 0
+                self.y_change = 0
+
+                self.facing = 'down'
+
                 self.image = pygame.Surface([self.WIDTH, self.HEIGHT])
-                self.image.fill(RED) #will be changed in a future update
+                self.image.fill(GREEN) #will be changed in a future update
 
                 self.rect = self.image.get_rect()
                 self.rect.x = self.x
                 self.rect.y = self.y
         
         def update(self):
-                def movement(self):
-                        key = pygame.key.get_pressed()
-                        if [pygame.K_a]:
-                                self.x_change -= Player_Speed
-                                self.facing = 'left'
-                                
-                        if [pygame.K_d]:
-                                self.x_change += Player_Speed
-                                self.facing = 'right'
+                self.movement()
 
-                        if [pygame.K_w]:
-                                self.y_change -= Player_Speed
-                                self.facing = 'up'
+                self.rect.x += self.x_change
+                self.rect.y += self.y_change
 
-                        if [pygame.K_s]:
-                                self.y_change += Player_Speed
-                                self.facing = 'down'
+                self.x_change = 0
+                self.y_change = 0
+
+        def movement(self):
+                key = pygame.key.get_pressed()
+                if key[pygame.K_a]:
+                        self.x_change -= Player_Speed
+                        self.facing = 'left'
+                if key[pygame.K_d]:
+                        self.x_change += Player_Speed
+                        self.facing = 'right'
+                if key[pygame.K_w]:
+                        self.y_change -= Player_Speed
+                        self.facing = 'up'
+                if key[pygame.K_s]:
+                        self.y_change += Player_Speed
+                        self.facing = 'down'
