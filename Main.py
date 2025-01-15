@@ -16,8 +16,13 @@ class Game:
                 self.all_sprites = pygame.sprite.LayeredUpdates()
                 self.blocks = pygame.sprite.LayeredUpdates()
                 self.mob1 = pygame.sprite.LayeredUpdates()
-
+                
                 self.player = Player(self, 1, 2)
+        def events(self):
+                for event in pygame.event.get():
+                        if event.type == pygame.QUIT:
+                                self.playing = False
+                                self.running = False
 
         def update(self):
                 self.all_sprites.update()
@@ -36,6 +41,9 @@ class Game:
                 self.running = False
 
         def game_over(self):
+                pass
+        def intro_screen(self):
+                pass
 
 g = Game()
 g.intro_screen()
